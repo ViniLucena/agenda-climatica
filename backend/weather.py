@@ -10,6 +10,7 @@ OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY")
 
 print("chave da API do OpenWeather:", OPENWEATHER_API_KEY) #apenas para teste, remover depois
 
+#funcao para buscar o clima no openweather
 def get_weather(city_name):
     base_url = "http://api.openweathermap.org/data/2.5/weather"
     params = {
@@ -26,3 +27,4 @@ def get_weather(city_name):
         return {"cidade": city_name, "temperatura": temperature, "descricao": weather_desc}
     else:
         return {"error": "nao foi possivel obter o clima para a cidade informada."}
+    
